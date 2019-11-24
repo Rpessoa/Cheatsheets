@@ -1,0 +1,148 @@
+Git Basic Commands
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! This is NOT a Tutorial !!!!!!!!!!!
+!! This is only a basic cheatsheet !!!!!!!!!!!
+!! Feel free to suggest changes/corrections !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Checks if Git is installed in your machine:
+
+	git --version
+
+
+Inside the directory you want to track, start Git tracking:
+
+	git init		# a .git file will be created
+
+
+To check the status of your local Git repository:
+
+	git status
+
+To start tracking the files in your repository:
+
+	git add -A		# start tracking all files in the dir
+
+	git add <file_name>	# start tracking the specific file
+
+
+To stop tracking a file:
+
+	git rm --cached <file_name>
+
+
+After adding a/all file(s) you must commit and include a brief message explaining your commit:
+
+	git commit -m "Include your message"
+
+
+If you want to come back to your previous track/version:
+
+	git reset HEAD		# undo most recent commit
+
+
+To restore previous commit to a file:
+
+	git restore --staged <file_name>	
+
+
+To see the differences bewteen your original and new edited file:
+
+	git diff <file_name>
+
+
+To see the content of a file:
+
+	git checkout <file_name>	#similar to cat <file_name>
+
+
+If you want your Git to ignore certain file type you need to create a .gitignore file:
+The .gitignore file will have your list of files you don't want to track, such as .jpg, .pdf etc...
+
+	echo "*.pdf" > .gitignore	# the *.pdf string will be included in your .gitignore
+					# you can use any editor to populate your .gitignore
+					# you need to "add" and "commit" your .gitignore
+
+
+To check in what branch you are currently working:
+
+	git branch			# your first/original local branch is "master"
+					# you can create as many as you like
+
+
+To create a new branch:
+
+	git branch <new_branch_name>	# this cmd will create your new branch and will
+					# make it as your current branch
+
+
+To go back to your "master":
+
+	git checkout master
+
+
+If you need to delete a branch:
+
+	git branch -d <branch_name>
+
+
+If your finished editing your code and want to merge if the one in your "master",
+be sure to be inside your "master" branch "git checkout master". Inside "master" do:
+
+	git merge <branch_name>		# include the name of the branch you want to merge
+					# with "master". If there is a conflict, you will be
+					# able to edit the files
+
+##########
+# Remote #
+##########
+
+In order to connect to your remote repository you need to know your user_name and password.
+To avoid having to type your user name all the time you do a push, you can set it as follow:
+
+	git config --global user.name "your_user_name"
+
+
+To check which remote repository our local repo is connected to:
+
+	git remote			# if nothing happens it means no remote repo is connected
+
+
+
+If you have a remote repo and wants to connect it locally:
+
+	git remote add origin https://github.com/your_account/your_remote_repo.git
+
+
+
+To send your local tracked information to your remote repo:
+
+	git push -u origin master	# this cmd is used only for the first time you push
+
+
+After you first push to your remote repo you can just:
+
+	git push
+
+
+To push file to a different remote branch:
+
+	git push origin <remote_branch_name>
+
+
+
+To pull from your remote repo:
+
+	git pull
+
+
+
+
+
+
+
+
+
+
